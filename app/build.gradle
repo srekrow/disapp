@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 33
+
+    namespace 'com.miui.hybrid'
     
     defaultConfig {
         applicationId "com.miui.hybrid" // 目标广告包名
@@ -17,4 +19,5 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
+
 }
