@@ -14,11 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
-    # ------------------ VVVV 在这里添加新步骤 VVVV ------------------
-    - name: List files in the repository
-      run: ls -R
-    # ------------------ ^^^^ 在这里添加新步骤 ^^^^ ------------------
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
@@ -29,6 +24,11 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
+    # ------------------ VVVV 添加这个新步骤 VVVV ------------------
+    - name: Check Gradle Projects
+      run: ./gradlew projects
+    # ------------------ ^^^^ 添加这个新步骤 ^^^^ ------------------
       
     - name: Build with Gradle
       run: ./gradlew build # 注意：这里暂时用 build，而不是 :app:build
